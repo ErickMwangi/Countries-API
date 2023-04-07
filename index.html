@@ -1,52 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Face | REST Countries API with color theme switcher</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main>
-      <nav>
-        <h1>Where in the world?</h1>
-        <button class="Dark" onclick="DarkMode()">
-          <i class="fa-regular fa-moon"></i> Dark Mode
-        </button>
-      </nav>
-      <div class="container">
-        <div class="searcharea">
-          <form class="search" onsubmit="return false">
-            <i class="fa-solid searchicon fa-magnifying-glass"></i>
-            <input
-              type="text"
-              name="search"
-              id="search"
-              required="required"
-              autocomplete="off"
-              placeholder="Search for a country"
-            />
-          </form>
-          <select name="region" id="region" aria-label="Region">
-            <option value="" disabled selected hidden>Filter by Region</option>
-            <option data-region="Africa" value="Africa">Africa</option>
-            <option data-region="America" value="Americas">America</option>
-            <option data-region="Asia" value="Asia">Asia</option>
-            <option data-region="Europe" value="Europe">Europe</option>
-            <option data-region="Oceania" value="Oceania">Oceania</option>
-          </select>
+    <title>Country Api</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://kit.fontawesome.com/048d59723e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container side-by-side">
+            <a href="#" class="header__logo" onclick="location.reload()">where in the world ?</a>
+            <div class="header__mode">
+                <input type="checkbox" class="checkbox" id="mode" />
+                <label for="mode" class="mode-label" onclick="toggleMode()">
+                    <i class="fas fa-moon dark"></i>
+                    <i class="fas fa-lightbulb light"></i>
+                </label>
+            </div>
         </div>
-        <div class="countries"></div>
-      </div>
-    </main>
-    <script src="script.js"></script>
-  </body>
+    </header>
+    <section class="search-section">
+        <div class="container side-by-side">
+            <div class="search">
+                <i class="fas fa-search search__icon"></i>
+                <input type="text" class="search__input" placeholder="Search for a country" />
+            </div>
+            <div class="filter">
+                <div class="filter__text" onclick="showItem()">
+                    <span>
+                        Filter by Region
+                    </span>
+                    <i class="fas fa-chevron-down down filter__icon"></i>
+                </div>
+                <ul class="filter__values hide">
+                    <li class="filter__item " data-region="All">All</li>
+                    <li class="filter__item " data-region="Africa">Africa</li>
+                    <li class="filter__item " data-region="Americas">Americas</li>
+                    <li class="filter__item " data-region="Asia">Asia</li>
+                    <li class="filter__item " data-region="Europe">Europe</li>
+                    <li class="filter__item " data-region="Oceania">Oceania</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="countries-section">
+        <div class="container">
+            <div class="countries__container">
+                <!-- <div class="country-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/800px-Flag_of_Tunisia.svg.png"
+                        alt="flag" class="country__flag">
+                    <div class="country__info">
+                        <div class="country__name">Tunisia</div>
+                        <div class="country__population">Population : <span>11.874.555</span></div>
+                        <div class="country__region">Region : <span>Africa</span></div>
+                        <div class="country__capital">Capital : <span>Tunis</span></div>
+                    </div>
+                </div> -->
+
+
+            </div>
+        </div>
+    </section>
+
+    <button id="to-top" onclick="scrollToTop()" class="hide">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
