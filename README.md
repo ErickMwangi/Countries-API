@@ -1,42 +1,67 @@
+# Quotes Website
+___
+## Contributors of this Project
+___
+## By Erick Mwangi on 7th April 2023
+___
+## Description
+___
+
+Moringa Phase 1 Independent Project on a Quotes website that allows users to 
+
+  • View all quotes `GET/quotes`
+  • Create their own quote `POST/quotes`
+  • like a quote `PATCH/quotes/:id`
+  • Delete a quote `DELETE/QUOTES/:id`
+
 ## Setup Requirements
+___
+
   • Git
   • Github
+  • Web Browser (Chrome or Firefox)
   • Node.js
-  • JSON Server
+  • JSON Server  
+  
+  ## Getting started
+___
 
-  ## Built with
-  • Semantic HTML5 markup
-  • CSS custom properties
-  • JavaScript
-  • REST API
+Install JSON Server
+`npm install -g json-server`
 
- ## Run 
-  'npm install -g json-server' command to install the JSON Server.
-  'json-server --watcher db.json to start the JSON Server'
+create a `db.json` file with some data
 
-  To view server navigate to   
-  Resources
-  http://localhost:3000/posts
-  http://localhost:3000/comments
-  http://localhost:3000/profile
+Start JSON Server
+`json-server --watch db.json`
 
-  Home
-  http://localhost:3000
+## Introduction
 
-  To run the application, open the index.html file on your browser using a suitable code editor ie https://code.visualstudio.com/
+ This code creates a web page that displays information about countries using data fetched from `https://restcountries.com/v3.1/all`. The page has features for filtering and searching through the list of countries displayed.
 
-## About
-The code is creating a webpage that displays information about countries using data from "https://restcountries.com/v3.1/all". It fetches data about all countries and creates a display for each country containing its name, flag, population, region, and capital. It also allows the user to click on a country's name to show more detailed information about that country, such as its native name, subregion, and borders.
+The code starts by defining variables using `document.querySelector()` to access HTML elements. There are variables for buttons, containers, and other elements needed for the filtering and searching features.
 
-The 'GetCountries()' function fetches data about all countries from the API and creates a display for each country. it first uses the 'fetch()' function to get the data, and then uses the 'then()' method to process the data. if the response is OK, it returns the JSON data, otherwise it throws an error. Then, it loops through the data and creates a 'div' element for each country containing its name, flag, and details. It also sets attributes for the element to store the country's name and region
+There is a function called `toggleMode()` which toggles the class "light" on the `document.documentElement` element. This function is used to switch between dark and light mode.
 
-The 'ShowMore()' function fetches data about the country using its name, then creates a display to show the country's details. it first creates a 'div' element to store the display, sets its class attribute to "ShowMore", and creates a 'button' element to store the country's flag and details sets its class attribute to "showContainer", and creates a 'div' element for the country's details, setting its class attribute to "details".
+There is another function called `showItem()` which toggles the class "open" on the .filter__icon element and calculates the height of the list container to show or hide it. This function is used to expand and collapse the filter list.
 
-Next, it creates 'p' element for each piece of information to be displayed, such as the native name, population, region, subregion, and capital, and adds them to the details 'div'. Finally it appends the flag, name, details, and back button to showContainer 'div', and appends the showContainer 'div' to the showMore 'div'. The 'Back()' function is not provided in the code, but it is expected to take the user back to the previous page when called. 
+There is also a function called `scrollToTop()` which scrolls the window to the top of the page using `window.scrollTo()` method. It is triggered when the user clicks on the "to top" button.
 
-## known Bugs
+The code then fetches data from the API using fetch() and adds a click event listener to the filter items to filter the countries by region. It also adds an input event listener to the search input to filter the countries by name.
+
+The `filter()` function takes an array of countries and filters them by region or by search term, depending on which filter is active. The `show()` function takes an array of countries and two filtered arrays and shows or hides each country element based on whether it is in the intersection of the two filtered arrays.
+
+## Known Bugs
+___
+
 There are no known bugs of this project at the moment.
+Overall, the code seems to be well-organized and efficient for displaying and filtering a large list of countries.
 
-## Support and contact details
-For any contributions towards this project
-• Email: rickthetri20@gmail.com
+## Support and Contact details
+___
+
+For any contributions towards this project:
+  • Email rickthetri20@gmail.com
+  
+## Like this Project
+___
+if you are feeling gorgeous by me a coffee!
