@@ -50,6 +50,8 @@ The code then fetches data from the API using fetch() and adds a click event lis
 
 The `filter()` function takes an array of countries and filters them by region or by search term, depending on which filter is active. The `show()` function takes an array of countries and two filtered arrays and shows or hides each country element based on whether it is in the intersection of the two filtered arrays.
 
+* to view it live  in browser "[https://countries-api-11.netlify.app/]"
+
 ## Known Bugs
 ___
 
