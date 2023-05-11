@@ -1,0 +1,18 @@
+{
+  "homepage": "http://ErickMwangi.github.io/Countries-API",
+  "name": "countries-api",
+  "version": "1.0.0",
+  "description": "___ ## Contributors of this Project ___ ## By Erick Mwangi on 7th April 2023 ___ ## Description ___",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
